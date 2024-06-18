@@ -1,0 +1,38 @@
+version: "3.9"
+
+networks:
+  mysql-phpmyadmin:
+    name: mysql-phpmyadmin
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/24
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: serveur_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Azertyuiop*
+      MYSQL_DATABASE: footpro
+      MYSQL_USER: php
+      MYSQL_PASSWORD: php
+    ports:
+      - "3307:3306"
+    restart: always
+
+  phpmyadmin:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: phpmyadmin:latest
+    container_name: serveur_phpmyadmin
+    volumes:
+      - /Users/omarkone/Documents/Footpro:/var/www/html/footpro
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - "8888:80"
+    restart: always

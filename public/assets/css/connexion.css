@@ -1,0 +1,185 @@
+@keyframes tremblement {
+    0% {
+      transform: translateX(-20px);
+    }
+    10% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(20px);
+    }
+    30% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    60% {
+      transform: translateX(10px);
+    }
+    70% {
+      transform: translateX(0);
+    }
+    80% {
+      transform: translateX(-5px);
+    }
+    90% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
+
+  @keyframes pulsation {
+    0% {
+      box-shadow: #007bff00 1px 1px 1px 1px;
+    }
+    100% {
+      box-shadow: rgba(0, 81, 255, 0.5) 0px 0px 4px 4px;
+    }
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="date"]:focus,
+  textarea:focus,
+  select:focus {
+    animation: pulsation 1.5s steps(50);
+    transform: scale(1.025);
+  }
+
+  input[type="text"]:not(:focus),
+  input[type="password"]:not(:focus),
+  input[type="email"]:not(:focus),
+  input[type="date"]:not(:focus),
+  textarea:not(:focus),
+  select:not(:focus) {
+    animation: tremblement 1s steps(10);
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #db4444;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .form-container {
+    background-color: #fff;
+    padding: 2em;
+    margin-top: 1em;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 1em;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #333333;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  select,
+  textarea,
+  input[type="text"]:hover,
+  input[type="password"]:hover,
+  input[type="email"]:hover,
+  input[type="date"]:hover,
+  textarea:hover,
+  select:hover {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  input[type="text"]:hover,
+  input[type="password"]:hover,
+  input[type="email"]:hover,
+  input[type="date"]:hover,
+  textarea:hover,
+  select:hover {
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 2px 4px rgba(74, 144, 226, 0.2);
+    animation: pulse 5s ease-out;
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #db4444;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  .error-message,
+  .valid-message {
+    display: none;
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+
+  input:invalid + .error-message {
+    display: block;
+    color: #dc3545;
+  }
+
+  input:valid + .valid-message {
+    display: block;
+    color: #28a745;
+  }
+
+ 
+
+  /* Personnalisation des éléments de formulaire */
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-right: 0.5em;
+    transition: transform 0.2s ease;
+  }
+
+  .checkbox-group label,
+  .radio-group label {
+    padding: 5px 10px;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+  }
+
+  .checkbox-group input[type="checkbox"]:checked + label,
+  .radio-group input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .checkbox-group input[type="checkbox"]:hover,
+  .radio-group input[type="radio"]:hover {
+    transform: scale(1.1);
+  }
