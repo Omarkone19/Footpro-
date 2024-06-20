@@ -128,18 +128,26 @@
             <!-- Collapsible wrapper -->
         
             <!-- Right elements -->
-            <div class="d-flex align-items-center">
-            <form action="search" method="GET">
-    <div class="input-group me-3">
-        <div class="form-outline" data-mdb-input-init>
-            <input id="search-focus" type="search" name="query" class="form-control" />
-            <label class="form-label" for="search-focus">Recherche</label>
+<div class="d-flex align-items-center">
+    <form action="search" method="GET" id="search-form">
+        <div class="input-group me-3">
+            <div class="form-outline" data-mdb-input-init>
+                <input id="search-focus" type="search" name="query" class="form-control" />
+                <label class="form-label" for="search-focus">Recherche</label>
+            </div>
+            <button type="submit" class="btn btn-custom" data-mdb-ripple-init>
+                <i class="fas fa-search"></i>
+            </button>
         </div>
-        <button type="submit" class="btn btn-custom" data-mdb-ripple-init>
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
-</form>
+    </form>
+</div>
+
+<script>
+    document.getElementById('search-form').addEventListener('submit', function() {
+        document.getElementById('search-focus').value = '';
+    });
+</script>
+
 
                   <!-- heart -->
                   <a class="link-secondary me-3" href="<?= URL ?>connexion">
